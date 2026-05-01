@@ -1,0 +1,159 @@
+/* Container Layout */
+.quiz-page-container {
+  display: flex;
+  height: 100vh;
+  background-color: #1a1a1a; /* Dark background */
+  color: #e0e0e0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Left Side */
+.problem-panel {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  border-right: 1px solid #333;
+}
+
+.panel-header h2 {
+  display: inline;
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+
+.meta-info {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.difficulty { color: #4caf50; margin-right: 15px; }
+.points { color: #ffa000; }
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+.feedback-btn {
+  background: none;
+  border: none;
+  color: #888;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.statement-text {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+/* Right Side */
+.options-panel {
+  flex: 1.2;
+  padding: 40px;
+  background-color: #121212;
+}
+
+.options-instruction {
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Option Card Styling */
+.option-card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option-card:hover {
+  background-color: #2a2a2a;
+}
+
+.option-card.selected {
+  border-color: #4a90e2;
+  background-color: #1c2530;
+}
+
+/* Hide Default Radio */
+.option-card input[type="radio"] {
+  display: none;
+}
+
+/* Custom Radio Circle */
+.custom-radio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #555;
+  border-radius: 50%;
+  margin-right: 15px;
+  position: relative;
+}
+
+.option-card.selected .custom-radio {
+  border-color: #4a90e2;
+}
+
+.option-card.selected .custom-radio::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #4a90e2;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Resize Handle UI */
+.resizer {
+  width: 4px;
+  background: #333;
+  cursor: col-resize;
+}
+
+
+
+
+
+
+.submit-btn {
+  /* Layout */
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  
+  /* Smoothness */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.5px;
+  text-transform: uppercase; /* Standard for high-end UI */
+}
+
+/* Important: The "Disabled" state must look inactive */
+.submit-btn:disabled {
+  background-color: #333333 !important;
+  color: #666666 !important;
+  cursor: not-allowed;
+  box-shadow: none !important;
+  transform: none !important;
+}
